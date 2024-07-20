@@ -1,10 +1,10 @@
-mport React from "react";
+import React from "react";
 
 function QuestionItem({ question, deleteQuestion, updateQuestion }) {
   const { id, prompt, answers, correctIndex } = question;
 
   function handleDelete() {
-    fetch(http://localhost:4000/questions/${id}, {
+    fetch(`http://localhost:4000/questions/${id}`, {
       method: "DELETE",
     }).then(() => deleteQuestion(id));
   }
@@ -14,7 +14,7 @@ function QuestionItem({ question, deleteQuestion, updateQuestion }) {
       ...question,
       correctIndex: parseInt(event.target.value),
     };
-    fetch(http://localhost:4000/questions/${id}, {
+    fetch(`http://localhost:4000/questions/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
